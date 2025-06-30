@@ -40,6 +40,5 @@ Thumbs.db
 .LSOverride
 
 # Maven Wrapper
-mvnw
 mvnw.cmd
 .mvn/wrapper/maven-wrapper.jar
