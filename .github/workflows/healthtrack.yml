@@ -36,7 +36,7 @@ jobs:
         with:
           args: >
             -Dsonar.projectKey=MarceloBravo_healthtrack
-            -Dsonar.organization=healthtrack-org
+            -Dsonar.organization=marcelobravo
             -Dsonar.login=${{ secrets.SONAR_TOKEN }}
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
