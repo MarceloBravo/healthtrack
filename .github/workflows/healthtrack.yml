@@ -32,11 +32,12 @@ jobs:
         continue-on-error: true
 
       - name: SonarQube Analysis
-        uses: SonarSource/sonarcloud-github-action@v2
-        with:
-          args: >
-            -Dsonar.projectKey=MarceloBravo_healthtrack
-            -Dsonar.organization=marcelobravo
-            -Dsonar.login=${{ secrets.SONAR_TOKEN }}
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        # uses: SonarSource/sonarcloud-github-action@v2
+        # with:
+        #   args: >
+        #     -Dsonar.projectKey=MarceloBravo_healthtrack
+        #     -Dsonar.organization=marcelobravo
+        #     -Dsonar.login=$ {{ secrets.SONAR_TOKEN }}
+        # env:
+        #   SONAR_TOKEN: $ {{ secrets.SONAR_TOKEN }}
+        run: ./mvnw verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=MarceloBravo_healthtrack -Dsonar.organization=marcelobravo -Dsonar.token=${{ secrets.SONAR_TOKEN }}
