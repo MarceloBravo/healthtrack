@@ -38,3 +38,5 @@ jobs:
             -Dsonar.projectKey=HealthTrack
             -Dsonar.organization=healthtrack-org
             -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
