@@ -11,5 +11,3 @@ O bien, si tienes el wrapper, usa:
 ```
 ./mvnw.cmd spring-boot:run
 ```
-
-Si necesitas ayuda para instalar Maven, avísame.
