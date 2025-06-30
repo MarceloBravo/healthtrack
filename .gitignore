@@ -1,0 +1,45 @@
+# Maven
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# IntelliJ IDEA
+*.iml
+.idea/
+out/
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment
+.env
+
+# Others
+*.swp
+*.swo
+
+# Windows
+*.exe
+*.dll
+*.bat
+*.cmd
+
+# Mac
+.AppleDouble
+.LSOverride
+
+# Maven Wrapper
+mvnw
+mvnw.cmd
+.mvn/wrapper/maven-wrapper.jar

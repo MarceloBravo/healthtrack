@@ -1,0 +1,36 @@
+name: CI_HealthTrack
+
+on: [push, pull_request]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up JDK
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+
+    - name: Run Unit Tests
+      run: ./mvnw test
+
+    - name: Run Functional Tests
+      run: ./mvnw verify -Dtest=UsuarioFunctionalTest
+
+    - name: Install JMeter
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y jmeter
+
+    - name: Run Performance Tests
+      run: jmeter -n -t tests/pesoTest.jmx -l results.jtl
+      continue-on-error: true
+
+    - name: SonarQube Analysis
+      uses: SonarSource/sonarcloud-github-action@v2
+      with:
+        projectKey: HealthTrack
+        organization: healthtrack-org
+        token: ${{ secrets.SONAR_TOKEN }}
