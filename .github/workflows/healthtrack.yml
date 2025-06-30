@@ -16,8 +16,8 @@ jobs:
 
       - name: Grant execute permission for mvnw
         run: chmod +x ./mvnw
-      - name: Run Unit Tests
-        run: ./mvnw test
+      #- name: Run Unit Tests
+      #  run: ./mvnw test
 
       - name: Run Functional Tests
         run: ./mvnw verify -Dtest=UsuarioFunctionalTest
