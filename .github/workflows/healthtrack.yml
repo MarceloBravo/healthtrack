@@ -16,9 +16,11 @@ jobs:
 
       - name: Run Unit Tests
         run: ./mvnw test
+        working-directory: healthtrack
 
       - name: Run Functional Tests
         run: ./mvnw verify -Dtest=UsuarioFunctionalTest
+        working-directory: healthtrack
 
       - name: Install JMeter
         run: |
