@@ -35,7 +35,7 @@ jobs:
         uses: SonarSource/sonarcloud-github-action@v2
         with:
           args: >
-            -Dsonar.projectKey=HealthTrack
+            -Dsonar.projectKey=healthtrack
             -Dsonar.organization=healthtrack-org
             -Dsonar.login=${{ secrets.SONAR_TOKEN }}
         env:
